@@ -4,6 +4,6 @@ import by.tc.task01.entity.Appliance;
 
 public interface ApplianceFactory {
 
-	Appliance createAppliance(String features);
+	Appliance createAppliance(String[] features);
 	
 }

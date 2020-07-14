@@ -1,6 +1,6 @@
 package by.tc.task01.entity;
 
-public class Speakers extends Appliance {
+public class Speakers implements Appliance {
 	private int powerConsumption;
 	private int numberOfSpekers;
 	private int cordLength;
@@ -13,6 +13,22 @@ public class Speakers extends Appliance {
 		this.numberOfSpekers = numberOfSpekers;
 		this.range = range;
 		this.cordLength = cordLength;
+	}
+
+	public int getPowerConsumption() {
+		return powerConsumption;
+	}
+
+	public int getNumberOfSpekers() {
+		return numberOfSpekers;
+	}
+
+	public int getCordLength() {
+		return cordLength;
+	}
+
+	public String getRange() {
+		return range;
 	}
 
 	@Override
@@ -51,8 +67,8 @@ public class Speakers extends Appliance {
 
 	@Override
 	public String toString() {
-		return "Speakers [powerConsumption=" + powerConsumption + ", numberOfSpekers=" + numberOfSpekers + ", range="
-				+ range + ", cordLength=" + cordLength + "]";
+		return "Speakers:\npowerConsumption =" + powerConsumption + ", numberOfSpekers =" + numberOfSpekers
+				+ ", range =" + range + ", cordLength =" + cordLength + "]";
 	}
 
 }

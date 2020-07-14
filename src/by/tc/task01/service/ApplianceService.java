@@ -9,6 +9,6 @@ import by.tc.task01.entity.criteria.Criteria;
 
 public interface ApplianceService {	
 	
-	List<Appliance> find(Criteria criteria) throws FileNotFoundException, IOException;
+	List<Appliance> find(Criteria criteria) throws ServiceException, FileNotFoundException, IOException;
 	
 }

@@ -1,64 +1,49 @@
 package by.tc.task01.dao.impl;
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-
-import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
 
 import by.tc.task01.dao.ApplianceDAO;
+import by.tc.task01.dao.DAOException;
+import by.tc.task01.dao.FinderDAO;
+import by.tc.task01.dao.factory.ApplianceFactory;
+import by.tc.task01.dao.factory.ApplianceFactoryProvider;
+import by.tc.task01.dao.parser.Parser;
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.criteria.Criteria;
 
 public class ApplianceDAOImpl implements ApplianceDAO {
 
 	@Override
-	public List<Appliance> find(Criteria criteria) throws FileNotFoundException, IOException {
+	public List<Appliance> find(Criteria criteria) throws DAOException {
 
-		List<Appliance> results;
+		List<Appliance> appliances = new ArrayList<>();
 
-		results = new ArrayList<>();
+		FinderDAO finder = FileFinderDAOImpl.getInstance();
 
-		String groupName = criteria.getGroupSearchName();
+		List<String> resultsOfString;
+		resultsOfString = finder.findListOfStrings(criteria);
 
-		Object[] searchCriteria = criteria.getCriteria().keySet().toArray();
-		Object[] values = criteria.getCriteria().values().toArray();
+		ApplianceFactoryProvider factoryProvider = new ApplianceFactoryProvider();
+		ApplianceFactory factory = factoryProvider.takeApplianceFactory(criteria.getGroupSearchName());
 
-		System.out.println(groupName);
-		System.out.println(Arrays.toString(searchCriteria));
-		System.out.println(Arrays.toString(values));
+		Parser parser = Parser.getInstance();
 
-		String s;
-		String regexForLineWithGroupName = groupName + ".+";
-		String regexForLineWithCriteria;
-
-		try (BufferedReader reader = new BufferedReader(new FileReader("resources\\appliances_db.txt"))) {
-
-			while ((s = reader.readLine()) != null) {
-				if (s.matches(regexForLineWithGroupName)) {
-					boolean isLineSuits = true;
-					for (int index = 0; index < values.length; index++) {
-						regexForLineWithCriteria = searchCriteria[index] + "=" + values[index];
-						
-						if (!s.contains(regexForLineWithCriteria)) {
-							isLineSuits = false;
-						}
-					}
-					if (isLineSuits) {
-						System.out.println(s);
-						
-					}
-				}
-			}
+		for (int applianceIndex = 0; applianceIndex < resultsOfString.size(); applianceIndex++) {
+			
+			String applianceFeatures = resultsOfString.get(applianceIndex);
+			
+			String[] arrayOfFeatures = parser.parseToArrayOfFeatures(applianceFeatures);
+			
+			Appliance appliance = factory.createAppliance(arrayOfFeatures);
+			appliances.add(appliance);
 		}
 
 		// you may add your own code here
-		return null;
+		return appliances;
 	}
 
 	// you may add your own code here

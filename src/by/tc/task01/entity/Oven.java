@@ -1,6 +1,6 @@
 package by.tc.task01.entity;
 
-public class Oven extends Appliance {
+public class Oven implements Appliance {
 	private int powerConsumption;
 	private int weight;
 	private int capacity;
@@ -17,6 +17,30 @@ public class Oven extends Appliance {
 		this.depth = depth;
 		this.height = height;
 		this.width = width;
+	}
+
+	public int getPowerConsumption() {
+		return powerConsumption;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public int getCapacity() {
+		return capacity;
+	}
+
+	public int getDepth() {
+		return depth;
+	}
+
+	public double getHeight() {
+		return height;
+	}
+
+	public double getWidth() {
+		return width;
 	}
 
 	@Override
@@ -61,7 +85,7 @@ public class Oven extends Appliance {
 
 	@Override
 	public String toString() {
-		return "Oven [powerConsumption=" + powerConsumption + ", weight=" + weight + ", capacity=" + capacity
-				+ ", depth=" + depth + ", height=" + height + ", width=" + width + "]";
+		return "Oven:\npowerConsumption =" + powerConsumption + ", weight =" + weight + ", capacity =" + capacity
+				+ ", depth =" + depth + ", height =" + height + ", width =" + width + "]";
 	}
 }

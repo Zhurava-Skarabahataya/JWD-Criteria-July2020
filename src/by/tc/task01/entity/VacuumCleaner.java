@@ -1,6 +1,6 @@
 package by.tc.task01.entity;
 
-public class VacuumCleaner extends Appliance {
+public class VacuumCleaner implements Appliance {
 	private int PowerConsumption;
 	private int motorSpeedReulation;
 	private int cleaningWidth;
@@ -18,6 +18,30 @@ public class VacuumCleaner extends Appliance {
 		this.wandType = wandType;
 		this.motorSpeedReulation = motorSpeedReulation;
 		this.cleaningWidth = cleaningWidth;
+	}
+
+	public int getPowerConsumption() {
+		return PowerConsumption;
+	}
+
+	public int getMotorSpeedReulation() {
+		return motorSpeedReulation;
+	}
+
+	public int getCleaningWidth() {
+		return cleaningWidth;
+	}
+
+	public String getBagType() {
+		return bagType;
+	}
+
+	public String getFilterType() {
+		return filterType;
+	}
+
+	public String getWandType() {
+		return wandType;
 	}
 
 	@Override
@@ -68,8 +92,8 @@ public class VacuumCleaner extends Appliance {
 
 	@Override
 	public String toString() {
-		return "VacuumCleaner [PowerConsumption=" + PowerConsumption + ", filterType=" + filterType + ", bagType="
-				+ bagType + ", wandType=" + wandType + ", motorSpeedReulation=" + motorSpeedReulation
-				+ ", cleaningWidth=" + cleaningWidth + "]";
+		return "VacuumCleaner\nPowerConsumption =" + PowerConsumption + ", filterType =" + filterType + ", bagType ="
+				+ bagType + ", wandType =" + wandType + ", motorSpeedReulation =" + motorSpeedReulation
+				+ ", cleaningWidth =" + cleaningWidth + "]";
 	}
 }

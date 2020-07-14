@@ -1,6 +1,6 @@
 package by.tc.task01.entity;
 
-public class Laptop extends Appliance {
+public class Laptop implements Appliance {
 
 	private int memoryRom;
 	private int systemMemory;
@@ -11,8 +11,31 @@ public class Laptop extends Appliance {
 
 	private String os;
 
-	public Laptop(double batteryCapacity, String os, int memoryRom, int systemMemory, double cpu, int displayInchs) {
+	public int getMemoryRom() {
+		return memoryRom;
+	}
 
+	public int getSystemMemory() {
+		return systemMemory;
+	}
+
+	public int getDisplayInchs() {
+		return displayInchs;
+	}
+
+	public double getBatteryCapacity() {
+		return batteryCapacity;
+	}
+
+	public double getCpu() {
+		return cpu;
+	}
+
+	public String getOs() {
+		return os;
+	}
+
+	public Laptop(double batteryCapacity, String os, int memoryRom, int systemMemory, double cpu, int displayInchs) {
 		this.batteryCapacity = batteryCapacity;
 		this.os = os;
 		this.memoryRom = memoryRom;
@@ -67,8 +90,8 @@ public class Laptop extends Appliance {
 
 	@Override
 	public String toString() {
-		return "Laptop [batteryCapacity=" + batteryCapacity + ", os=" + os + ", memoryRom=" + memoryRom
-				+ ", systemMemory=" + systemMemory + ", cpu=" + cpu + ", displayInchs=" + displayInchs + "]";
+		return "Laptop:\nbatteryCapacity = " + batteryCapacity + ", os =" + os + ", memoryRom =" + memoryRom
+				+ ", systemMemory =" + systemMemory + ", cpu =" + cpu + ", displayInchs =" + displayInchs + "]";
 	}
 
 }

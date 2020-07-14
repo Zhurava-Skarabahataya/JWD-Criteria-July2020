@@ -1,6 +1,6 @@
 package by.tc.task01.entity;
 
-public class Refrigerator extends Appliance{
+public class Refrigerator implements Appliance {
 	private int powerConsumption;
 	private int weight;
 	private int freezerCapacity;
@@ -20,7 +20,29 @@ public class Refrigerator extends Appliance{
 		this.width = width;
 	}
 
-	
+	public int getPowerConsumption() {
+		return powerConsumption;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public int getFreezerCapacity() {
+		return freezerCapacity;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public double getOverallCapacity() {
+		return overallCapacity;
+	}
 
 	@Override
 	public int hashCode() {
@@ -60,11 +82,11 @@ public class Refrigerator extends Appliance{
 			return false;
 		return true;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Refrigerator [powerConsumption=" + powerConsumption + ", weight=" + weight + ", freezerCapacity="
-				+ freezerCapacity + ", overallCapacity=" + overallCapacity + ", height=" + height + ", width=" + width
-				+ "]";
+		return "Refrigerator:\npowerConsumption =" + powerConsumption + ", weight =" + weight + ", freezerCapacity ="
+				+ freezerCapacity + ", overallCapacity =" + overallCapacity + ", height =" + height + ", width ="
+				+ width + "";
 	}
 }

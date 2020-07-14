@@ -11,15 +11,6 @@ public class Criteria {
 
 	public Criteria(String groupSearchName) {
 		this.groupSearchName = groupSearchName;
-		System.out.println("groupName = " + groupSearchName);
-		//criteria.clear();
-		System.out.println("очищено");
-		for(Entry<String, Object> pair : criteria.entrySet())
-        {
-            Object value = pair.getValue();
-            System.out.println(value);
-        }
-		
 	}
 	
 	public String getGroupSearchName() {
