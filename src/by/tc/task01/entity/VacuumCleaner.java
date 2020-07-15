@@ -44,6 +44,30 @@ public class VacuumCleaner implements Appliance {
 		return wandType;
 	}
 
+	public void setPowerConsumption(int powerConsumption) {
+		PowerConsumption = powerConsumption;
+	}
+
+	public void setMotorSpeedReulation(int motorSpeedReulation) {
+		this.motorSpeedReulation = motorSpeedReulation;
+	}
+
+	public void setCleaningWidth(int cleaningWidth) {
+		this.cleaningWidth = cleaningWidth;
+	}
+
+	public void setBagType(String bagType) {
+		this.bagType = bagType;
+	}
+
+	public void setFilterType(String filterType) {
+		this.filterType = filterType;
+	}
+
+	public void setWandType(String wandType) {
+		this.wandType = wandType;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

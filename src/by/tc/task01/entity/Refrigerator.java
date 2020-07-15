@@ -44,6 +44,30 @@ public class Refrigerator implements Appliance {
 		return overallCapacity;
 	}
 
+	public void setPowerConsumption(int powerConsumption) {
+		this.powerConsumption = powerConsumption;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	public void setFreezerCapacity(int freezerCapacity) {
+		this.freezerCapacity = freezerCapacity;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public void setOverallCapacity(double overallCapacity) {
+		this.overallCapacity = overallCapacity;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

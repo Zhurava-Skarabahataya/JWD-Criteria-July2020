@@ -31,6 +31,22 @@ public class Speakers implements Appliance {
 		return range;
 	}
 
+	public void setPowerConsumption(int powerConsumption) {
+		this.powerConsumption = powerConsumption;
+	}
+
+	public void setNumberOfSpekers(int numberOfSpekers) {
+		this.numberOfSpekers = numberOfSpekers;
+	}
+
+	public void setCordLength(int cordLength) {
+		this.cordLength = cordLength;
+	}
+
+	public void setRange(String range) {
+		this.range = range;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

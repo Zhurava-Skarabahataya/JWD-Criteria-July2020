@@ -10,6 +10,21 @@ public class Laptop implements Appliance {
 	private double cpu;
 
 	private String os;
+	
+	public Laptop() {
+		
+	}
+	
+	
+	public Laptop(double batteryCapacity, String os, int memoryRom, int systemMemory, double cpu, int displayInchs) {
+		this.batteryCapacity = batteryCapacity;
+		this.os = os;
+		this.memoryRom = memoryRom;
+		this.systemMemory = systemMemory;
+		this.cpu = cpu;
+		this.displayInchs = displayInchs;
+
+	}
 
 	public int getMemoryRom() {
 		return memoryRom;
@@ -35,15 +50,31 @@ public class Laptop implements Appliance {
 		return os;
 	}
 
-	public Laptop(double batteryCapacity, String os, int memoryRom, int systemMemory, double cpu, int displayInchs) {
-		this.batteryCapacity = batteryCapacity;
-		this.os = os;
+	public void setMemoryRom(int memoryRom) {
 		this.memoryRom = memoryRom;
-		this.systemMemory = systemMemory;
-		this.cpu = cpu;
-		this.displayInchs = displayInchs;
-
 	}
+
+	public void setSystemMemory(int systemMemory) {
+		this.systemMemory = systemMemory;
+	}
+
+	public void setDisplayInchs(int displayInchs) {
+		this.displayInchs = displayInchs;
+	}
+
+	public void setBatteryCapacity(double batteryCapacity) {
+		this.batteryCapacity = batteryCapacity;
+	}
+
+	public void setCpu(double cpu) {
+		this.cpu = cpu;
+	}
+
+	public void setOs(String os) {
+		this.os = os;
+	}
+
+	
 
 	@Override
 	public int hashCode() {

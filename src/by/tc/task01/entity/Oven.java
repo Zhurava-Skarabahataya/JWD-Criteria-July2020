@@ -43,6 +43,30 @@ public class Oven implements Appliance {
 		return width;
 	}
 
+	public void setPowerConsumption(int powerConsumption) {
+		this.powerConsumption = powerConsumption;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+
+	public void setDepth(int depth) {
+		this.depth = depth;
+	}
+
+	public void setHeight(double height) {
+		this.height = height;
+	}
+
+	public void setWidth(double width) {
+		this.width = width;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

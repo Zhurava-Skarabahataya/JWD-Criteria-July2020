@@ -37,6 +37,26 @@ public class TabletPC implements Appliance {
 		return color;
 	}
 
+	public void setBatteryCapacity(int batteryCapacity) {
+		this.batteryCapacity = batteryCapacity;
+	}
+
+	public void setDisplayInches(int displayInches) {
+		this.displayInches = displayInches;
+	}
+
+	public void setMemoryRom(int memoryRom) {
+		this.memoryRom = memoryRom;
+	}
+
+	public void setFlashMemoryCapacity(int flashMemoryCapacity) {
+		this.flashMemoryCapacity = flashMemoryCapacity;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
