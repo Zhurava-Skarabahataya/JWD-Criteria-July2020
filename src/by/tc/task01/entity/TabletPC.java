@@ -8,6 +8,9 @@ public class TabletPC implements Appliance {
 
 	private String color;
 
+	public TabletPC() {
+	}
+
 	public TabletPC(int batteryCapacity, int displayInches, int memoryRom, int flashMemoryCapacity, String color) {
 
 		this.batteryCapacity = batteryCapacity;

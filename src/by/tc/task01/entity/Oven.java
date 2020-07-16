@@ -9,6 +9,9 @@ public class Oven implements Appliance {
 	private double height;
 	private double width;
 
+	public Oven() {
+	}
+
 	public Oven(int powerConsumption, int weight, int capacity, int depth, double height, double width) {
 
 		this.powerConsumption = powerConsumption;

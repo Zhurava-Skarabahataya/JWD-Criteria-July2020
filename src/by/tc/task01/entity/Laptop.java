@@ -10,12 +10,7 @@ public class Laptop implements Appliance {
 	private double cpu;
 
 	private String os;
-	
-	public Laptop() {
-		
-	}
-	
-	
+
 	public Laptop(double batteryCapacity, String os, int memoryRom, int systemMemory, double cpu, int displayInchs) {
 		this.batteryCapacity = batteryCapacity;
 		this.os = os;
@@ -24,6 +19,9 @@ public class Laptop implements Appliance {
 		this.cpu = cpu;
 		this.displayInchs = displayInchs;
 
+	}
+
+	public Laptop() {
 	}
 
 	public int getMemoryRom() {
@@ -73,8 +71,6 @@ public class Laptop implements Appliance {
 	public void setOs(String os) {
 		this.os = os;
 	}
-
-	
 
 	@Override
 	public int hashCode() {

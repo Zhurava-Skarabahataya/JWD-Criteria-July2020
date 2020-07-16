@@ -1,7 +1,7 @@
 package by.tc.task01.entity;
 
 public class VacuumCleaner implements Appliance {
-	private int PowerConsumption;
+	private int powerConsumption;
 	private int motorSpeedReulation;
 	private int cleaningWidth;
 
@@ -9,10 +9,13 @@ public class VacuumCleaner implements Appliance {
 	private String filterType;
 	private String wandType;
 
+	public VacuumCleaner() {
+	}
+
 	public VacuumCleaner(int powerConsumption, String filterType, String bagType, String wandType,
 			int motorSpeedReulation, int cleaningWidth) {
 
-		PowerConsumption = powerConsumption;
+		this.powerConsumption = powerConsumption;
 		this.filterType = filterType;
 		this.bagType = bagType;
 		this.wandType = wandType;
@@ -21,7 +24,7 @@ public class VacuumCleaner implements Appliance {
 	}
 
 	public int getPowerConsumption() {
-		return PowerConsumption;
+		return powerConsumption;
 	}
 
 	public int getMotorSpeedReulation() {
@@ -45,7 +48,7 @@ public class VacuumCleaner implements Appliance {
 	}
 
 	public void setPowerConsumption(int powerConsumption) {
-		PowerConsumption = powerConsumption;
+		this.powerConsumption = powerConsumption;
 	}
 
 	public void setMotorSpeedReulation(int motorSpeedReulation) {
@@ -72,7 +75,7 @@ public class VacuumCleaner implements Appliance {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + PowerConsumption;
+		result = prime * result + powerConsumption;
 		result = prime * result + ((bagType == null) ? 0 : bagType.hashCode());
 		result = prime * result + cleaningWidth;
 		result = prime * result + ((filterType == null) ? 0 : filterType.hashCode());
@@ -90,7 +93,7 @@ public class VacuumCleaner implements Appliance {
 		if (getClass() != obj.getClass())
 			return false;
 		VacuumCleaner other = (VacuumCleaner) obj;
-		if (PowerConsumption != other.PowerConsumption)
+		if (powerConsumption != other.powerConsumption)
 			return false;
 		if (bagType == null) {
 			if (other.bagType != null)
@@ -116,7 +119,7 @@ public class VacuumCleaner implements Appliance {
 
 	@Override
 	public String toString() {
-		return "VacuumCleaner\nPowerConsumption =" + PowerConsumption + ", filterType =" + filterType + ", bagType ="
+		return "VacuumCleaner\nPowerConsumption =" + powerConsumption + ", filterType =" + filterType + ", bagType ="
 				+ bagType + ", wandType =" + wandType + ", motorSpeedReulation =" + motorSpeedReulation
 				+ ", cleaningWidth =" + cleaningWidth + "]";
 	}

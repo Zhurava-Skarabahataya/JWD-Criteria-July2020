@@ -9,6 +9,9 @@ public class Refrigerator implements Appliance {
 
 	private double overallCapacity;
 
+	public Refrigerator() {
+	}
+
 	public Refrigerator(int powerConsumption, int weight, int freezerCapacity, double overallCapacity, int height,
 			int width) {
 

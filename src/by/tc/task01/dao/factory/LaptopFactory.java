@@ -8,6 +8,8 @@ public class LaptopFactory implements ApplianceFactory {
 	@Override
 	public Appliance createAppliance(String[] features) {
 
+		Laptop laptop = new Laptop();
+				
 		double batteryCapacity;
 		String os;
 		int memoryRom;
@@ -21,8 +23,15 @@ public class LaptopFactory implements ApplianceFactory {
 		systemMemory = Integer.parseInt(features[6]);
 		cpu = Double.parseDouble(features[8]);
 		displayInchs = Integer.parseInt(features[12]);
-
-		return new Laptop(batteryCapacity, os, memoryRom, systemMemory, cpu, displayInchs);
+		
+		laptop.setBatteryCapacity(batteryCapacity);
+		laptop.setOs(os);
+		laptop.setMemoryRom(memoryRom);
+		laptop.setSystemMemory(systemMemory);
+		laptop.setCpu(cpu);
+		laptop.setDisplayInchs(displayInchs);
+		
+		return laptop;
 	}
 
 }

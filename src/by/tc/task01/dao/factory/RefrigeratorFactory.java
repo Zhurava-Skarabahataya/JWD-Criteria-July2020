@@ -8,6 +8,8 @@ public class RefrigeratorFactory implements ApplianceFactory {
 	@Override
 	public Appliance createAppliance(String[] features) {
 		
+		Refrigerator refrigerator = new Refrigerator();
+		
 		int powerConsumption;
 		int weight;
 		int freezerCapacity;
@@ -21,8 +23,15 @@ public class RefrigeratorFactory implements ApplianceFactory {
 		overallCapacity = Double.parseDouble(features[8]);
 		height = Integer.parseInt(features[10]);
 		width = Integer.parseInt(features[12]);
+		
+		refrigerator.setPowerConsumption(powerConsumption);
+		refrigerator.setWeight(weight);
+		refrigerator.setFreezerCapacity(freezerCapacity);
+		refrigerator.setOverallCapacity(overallCapacity);
+		refrigerator.setHeight(height);
+		refrigerator.setWidth(width);
 
-		return new Refrigerator(powerConsumption, weight, freezerCapacity, overallCapacity, height, width);
+		return refrigerator;
 	}
 
 }

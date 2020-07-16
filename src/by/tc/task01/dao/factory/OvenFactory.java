@@ -8,6 +8,8 @@ public class OvenFactory implements ApplianceFactory {
 	@Override
 	public Appliance createAppliance(String[] features) {
 
+		Oven oven = new Oven();
+		
 		int powerConsumption;
 		int weight;
 		int capacity;
@@ -21,8 +23,15 @@ public class OvenFactory implements ApplianceFactory {
 		depth = Integer.parseInt(features[8]);
 		height = Double.parseDouble(features[10]);
 		width = Double.parseDouble(features[12]);
+		
+		oven.setPowerConsumption(powerConsumption);
+		oven.setWeight(weight);
+		oven.setCapacity(capacity);
+		oven.setDepth(depth);
+		oven.setHeight(height);
+		oven.setWidth(width);
 
-		return new Oven(powerConsumption, weight, capacity, depth, height, width);
+		return oven;
 	}
 
 }

@@ -7,7 +7,9 @@ public class VacuumCleanerFactory implements ApplianceFactory {
 
 	@Override
 	public Appliance createAppliance(String[] features) {
-		
+
+		VacuumCleaner vacuumCleaner = new VacuumCleaner();
+
 		int powerConsumption;
 		String filterType;
 		String bagType;
@@ -22,10 +24,14 @@ public class VacuumCleanerFactory implements ApplianceFactory {
 		motorSpeedReulation = Integer.parseInt(features[10]);
 		cleaningWidth = Integer.parseInt(features[12]);
 
-		return new VacuumCleaner(powerConsumption, filterType, bagType, wandType, motorSpeedReulation, cleaningWidth);// TODO
-																														// Auto-generated
-																														// method
-																														// stub
+		vacuumCleaner.setPowerConsumption(powerConsumption);
+		vacuumCleaner.setFilterType(filterType);
+		vacuumCleaner.setBagType(bagType);
+		vacuumCleaner.setWandType(wandType);
+		vacuumCleaner.setMotorSpeedReulation(motorSpeedReulation);
+		vacuumCleaner.setCleaningWidth(cleaningWidth);
+
+		return vacuumCleaner;
 	}
 
 }

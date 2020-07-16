@@ -8,6 +8,8 @@ public class TabletPCFactory implements ApplianceFactory {
 	@Override
 	public Appliance createAppliance(String[] features) {
 		
+		TabletPC tabletPC = new TabletPC();
+		
 		int batteryCapacity;
 		int displayInches;
 		int memoryRom;
@@ -20,7 +22,13 @@ public class TabletPCFactory implements ApplianceFactory {
 		flashMemoryCapacity = Integer.parseInt(features[8]);
 		color = features[10];
 
-		return new TabletPC(batteryCapacity, displayInches, memoryRom, flashMemoryCapacity, color);
+		tabletPC.setBatteryCapacity(batteryCapacity);
+		tabletPC.setDisplayInches(displayInches);
+		tabletPC.getMemoryRom();
+		tabletPC.setFlashMemoryCapacity(flashMemoryCapacity);
+		tabletPC.setColor(color);
+		
+		return tabletPC;
 	}
 
 }

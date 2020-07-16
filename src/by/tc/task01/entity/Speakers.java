@@ -2,15 +2,18 @@ package by.tc.task01.entity;
 
 public class Speakers implements Appliance {
 	private int powerConsumption;
-	private int numberOfSpekers;
+	private int numberOfSpeakers;
 	private int cordLength;
 
 	private String range;
 
+	public Speakers() {
+	}
+
 	public Speakers(int powerConsumption, int numberOfSpekers, String range, int cordLength) {
 
 		this.powerConsumption = powerConsumption;
-		this.numberOfSpekers = numberOfSpekers;
+		this.numberOfSpeakers = numberOfSpekers;
 		this.range = range;
 		this.cordLength = cordLength;
 	}
@@ -19,8 +22,8 @@ public class Speakers implements Appliance {
 		return powerConsumption;
 	}
 
-	public int getNumberOfSpekers() {
-		return numberOfSpekers;
+	public int getNumberOfSpeakers() {
+		return numberOfSpeakers;
 	}
 
 	public int getCordLength() {
@@ -35,8 +38,8 @@ public class Speakers implements Appliance {
 		this.powerConsumption = powerConsumption;
 	}
 
-	public void setNumberOfSpekers(int numberOfSpekers) {
-		this.numberOfSpekers = numberOfSpekers;
+	public void setNumberOfSpeakers(int numberOfSpekers) {
+		this.numberOfSpeakers = numberOfSpekers;
 	}
 
 	public void setCordLength(int cordLength) {
@@ -52,7 +55,7 @@ public class Speakers implements Appliance {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + cordLength;
-		result = prime * result + numberOfSpekers;
+		result = prime * result + numberOfSpeakers;
 		result = prime * result + powerConsumption;
 		result = prime * result + ((range == null) ? 0 : range.hashCode());
 		return result;
@@ -69,7 +72,7 @@ public class Speakers implements Appliance {
 		Speakers other = (Speakers) obj;
 		if (cordLength != other.cordLength)
 			return false;
-		if (numberOfSpekers != other.numberOfSpekers)
+		if (numberOfSpeakers != other.numberOfSpeakers)
 			return false;
 		if (powerConsumption != other.powerConsumption)
 			return false;
@@ -83,7 +86,7 @@ public class Speakers implements Appliance {
 
 	@Override
 	public String toString() {
-		return "Speakers:\npowerConsumption =" + powerConsumption + ", numberOfSpekers =" + numberOfSpekers
+		return "Speakers:\npowerConsumption =" + powerConsumption + ", numberOfSpeakers =" + numberOfSpeakers
 				+ ", range =" + range + ", cordLength =" + cordLength + "]";
 	}
 
